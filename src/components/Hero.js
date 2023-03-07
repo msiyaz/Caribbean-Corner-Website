@@ -8,11 +8,12 @@ import { motion } from 'framer-motion';
 // import variants
 import { fadeIn, staggerContainer } from '../variants';
 
+
 const Hero = () => {
   // destructure hero data
-  const { pretitle, title, subtitle, btnText } = heroData;
+  const { pretitle, title, subtitle, btnText, image} = heroData;
   return (
-    <section className='min-h-[980px] bg-hero bg-cover bg-right'>
+    <section className='min-h-[980px] bg-hero bg-cover bg-right' id='home'>
       {/* header */}
       <Header />
       <div className='container mx-auto min-h-[980px] flex justify-center items-center'>
@@ -46,7 +47,7 @@ const Hero = () => {
           </motion.p>
           {/* button */}
           <motion.div variants={fadeIn('down', 'tween', 0.5, 1.1)}>
-            <button className='btn'>{btnText}</button>
+            <a href={image}><button className='btn'>{btnText}</button></a>
           </motion.div>
         </motion.div>
       </div>

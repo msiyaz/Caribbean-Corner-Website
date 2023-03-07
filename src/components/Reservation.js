@@ -1,31 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState,useRef } from 'react';
 // import data
 import { reservationData } from '../data';
 // import datepicker
 import DatePicker from 'react-datepicker';
 // import datepicker css
 import 'react-datepicker/dist/react-datepicker.css';
-// import timepicker
-import TimePicker from 'react-time-picker';
 // import timepicker css
 import '../timepicker.css';
 // import icons
-import { FaUsers, FaCalendar, FaClock } from 'react-icons/fa';
+import { FaUsers, FaCalendar } from 'react-icons/fa';
+import { GiFoodTruck } from 'react-icons/gi'
+import { MdEmail } from 'react-icons/md'
 // import motion
 import { motion } from 'framer-motion';
 // import variants
 import { fadeIn, staggerContainer } from '../variants';
+//import emailjs
+import emailjs from '@emailjs/browser';
 
 const Reservation = () => {
   // destructure reservation data
   const { title, subtitle, modelImg, btnText } = reservationData;
   // date state
   const [startDate, setStartDate] = useState(new Date());
-  // clock state
-  const [value, setValue] = useState('10:00');
+  //sending enquiry
+    const form = useRef();
+    const [done, setDone] = useState(false);
+    const sendEmail = (e) => {
+      e.preventDefault();
+  
+      emailjs.sendForm('service_0g8oczd', 'template_u816ef7', form.current, 'KACmQ19f0JxBwClG-')
+        .then((result) => {
+            console.log(result.text);
+            setDone(true);
+            form.reset();
+        }, (error) => {
+            console.log(error.text);
+        });
+    };
 
   return (
-    <section className='relative top-96 z-30 pb-20 lg:py-[100px]'>
+    <section className='relative top-96 z-30 pb-20 lg:py-[100px]' id='reservation'>
       <div className='container mx-auto'>
         {/* text */}
         <motion.div
@@ -58,11 +73,21 @@ const Reservation = () => {
         </motion.div>
         {/* form */}
         <motion.form
+          ref={form} 
+          onSubmit={sendEmail}
           variants={fadeIn('up', 'tween', 0.7, 1.6)}
           initial='hidden'
           whileInView={'show'}
         >
-          <div className='flex flex-col lg:flex-row gap-y-4 items-center justify-between mb-8'>
+          <div className='flex flex-col lg:flex-column gap-y-4 items-center justify-between mb-8'>
+            {/* email */}
+            <div>
+              <div className='flex items-center gap-x-[10px] font-semibold text-dark text-base mb-3'>
+                <MdEmail />
+                <div>email</div>
+              </div>
+              <input name='email' className='input' type='text' placeholder='xxxx@xxx.com' />
+            </div>
             {/* datepicker */}
             <div>
               <div className='flex items-center gap-x-[10px] font-semibold text-dark text-base mb-3'>
@@ -70,32 +95,27 @@ const Reservation = () => {
                 <div>Choose Date</div>
               </div>
               <DatePicker
+                name='date'
                 className='input'
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
               />
             </div>
-            {/* timepicker */}
-            <div>
-              <div className='flex items-center gap-x-[10px] font-semibold text-dark text-base mb-3'>
-                <FaClock />
-                <div>Choose Time</div>
-              </div>
-              <TimePicker
-                className='input'
-                clearIcon={false}
-                clockIcon={false}
-                onChange={setValue}
-                value={value}
-              />
-            </div>
-            {/* person number */}
+            {/* number of persons */}
             <div>
               <div className='flex items-center gap-x-[10px] font-semibold text-dark text-base mb-3'>
                 <FaUsers />
                 <div>How many people?</div>
               </div>
-              <input className='input' type='text' placeholder='1' />
+              <input name='persons' className='input' type='number' placeholder='1' />
+            </div>
+            {/* food order */}
+            <div>
+              <div className='flex items-center gap-x-[10px] font-semibold text-dark text-base mb-3'>
+                <GiFoodTruck />
+                <div>What would you like?</div>
+              </div>
+              <input name='description' className='input' type='text' placeholder='Curry Roti' />
             </div>
           </div>
           {/* button */}
@@ -103,6 +123,7 @@ const Reservation = () => {
             <button className='btn capitalize w-full lg:w-auto'>
               {btnText}
             </button>
+            <span className='mt-3'>{done && "Thank you, we will get back to you soon"}</span>
           </div>
         </motion.form>
       </div>

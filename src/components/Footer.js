@@ -1,6 +1,5 @@
 import React from 'react';
 // import components
-import Newsletter from './Newsletter';
 import Copyright from './Copyright';
 import Socials from './Socials';
 // import data
@@ -14,7 +13,7 @@ const Footer = () => {
   // destructure footer data
   const { contact, hours, social } = footerData;
   return (
-    <footer className='relative top-96 z-20 bg-dark lg:bg-transparent lg:min-h-[620px] lg:bg-footer lg:bg-center lg:bg-no-repeat pt-20 lg:pt-32'>
+    <footer className='relative top-96 z-20 bg-dark lg:bg-transparent lg:min-h-[620px] lg:bg-footer lg:bg-center lg:bg-no-repeat pt-20 lg:pt-32' id='contact'>
       <div className='container mx-auto h-full'>
         {/* newsletter & info */}
         <motion.div
@@ -23,10 +22,6 @@ const Footer = () => {
           whileInView={'show'}
           className='h-full flex flex-col gap-y-4'
         >
-          {/* newsletter */}
-          <motion.div variants={fadeIn('up', 'tween', 0.4, 1.6)}>
-            <Newsletter />
-          </motion.div>
           {/* info */}
           <motion.div
             variants={fadeIn('up', 'tween', 0.6, 1.6)}

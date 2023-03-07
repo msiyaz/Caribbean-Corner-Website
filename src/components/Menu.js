@@ -8,9 +8,9 @@ import { fadeIn, staggerContainer } from '../variants';
 
 const Menu = () => {
   // destructure menu data
-  const { title, subtitle, modelImg, menuItems, btnText } = menuData;
+  const { title, subtitle, modelImg, menuItems, btnText, image } = menuData;
   return (
-    <section className='min-h-[780px]'>
+    <section className='min-h-[780px]' id='menu'>
       {/* background */}
       <div className='h-[780px] bg-menu absolute w-full max-w-[1800px] -z-0'></div>
       {/* text */}
@@ -96,7 +96,7 @@ const Menu = () => {
               })}
             </div>
           </div>
-          <button className='btn mx-auto capitalize'>{btnText}</button>
+          <a href={image}><button className='btn mx-auto capitalize'>{btnText}</button></a>
         </div>
       </motion.div>
     </section>

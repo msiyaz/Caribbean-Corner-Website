@@ -8,9 +8,9 @@ import { plateVariants, staggerContainer, fadeIn } from '../variants';
 
 const About = () => {
   // destructure data
-  const { pretitle, title, subtitle, btnText, image } = aboutData;
+  const { pretitle, title, subtitle, btnText, image, image1 } = aboutData;
   return (
-    <section className='min-h-[620px]'>
+    <section className='min-h-[620px]' id='about'>
       <div className='container mx-auto min-h-[620px]'>
         {/* text & image wrapper */}
         <motion.div
@@ -28,9 +28,10 @@ const About = () => {
             <div className='pretitle'>{pretitle}</div>
             <h2 className='h2 capitalize'>{title}</h2>
             <p className='mb-8 max-w-[560px]'>{subtitle}</p>
-            <button className='btn capitalize mx-auto lg:mx-0'>
+            <a href={image1}><button className='btn capitalize mx-auto lg:mx-0'>
               {btnText}
             </button>
+            </a>
           </motion.div>
           {/* image */}
           <motion.div

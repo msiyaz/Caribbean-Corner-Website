@@ -1,6 +1,8 @@
 import React from 'react';
 // import data
 import { navData } from '../data';
+//import link
+import {Link} from 'react-scroll'
 
 const Nav = () => {
   return (
@@ -9,12 +11,16 @@ const Nav = () => {
         {navData.map((item, index) => {
           return (
             <li key={index}>
-              <a
-                className='text-xl capitalize font-primary italic hover:text-dark transition-all duration-300'
-                href={item.href}
+              <Link 
+                to={item.href}
+                activeClass='active'
+                smooth={true}
+                spy={true}
+                offset={-200}
+                className='text-xl capitalize font-primary italic hover:text-dark cursor-pointer transition-all duration-300'
               >
-                {item.name}
-              </a>
+                {item.name}  
+              </Link>
             </li>
           );
         })}
