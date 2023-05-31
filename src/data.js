@@ -3,8 +3,13 @@ import {
   FaFacebookF,
   FaInstagram,
 } from 'react-icons/fa';
-import { MdFoodBank,
-MdFastfood } from 'react-icons/md';
+import { 
+  MdFoodBank,
+  MdFastfood 
+} from 'react-icons/md';
+import { 
+  SiDoordash
+} from 'react-icons/si';
 // import images
 import AboutImg from '../src/assets/img/about/plate.png';
 import ModelWhiteImg from '../src/assets/img/model-white.png';
@@ -34,9 +39,10 @@ export const heroData = {
 
 export const socialData = [
   { href: '/', icon: <FaFacebookF /> },
-  { href: '/', icon: <FaInstagram /> },
+  { href: 'https://instagram.com/caribbeancornernl', icon: <FaInstagram /> },
+  { href: 'https://www.doordash.com/en-CA/store/caribbean-corner-st.-johns-24615035/', icon: <SiDoordash /> },
   { href: 'https://www.skipthedishes.com/caribbean-corner-302-water-street?utm_source=google&utm_medium=organic&utm_campaign=gpa', icon: <MdFoodBank /> },
-  { href: 'https://food.google.com/chooseprovider?restaurantId=/g/11tg7z8kjh&g2lbs=ALIxsqomKHpLDzWTez9_uTLuIvfA-QnOwREm3Y-mbJEYtaklpyVziV7yYazP0RUB-UHWNBSZse1qqNDjOHMz8CIMkCGoHUVwRQ%3D%3D&hl=en-CA&gl=ca&cs=1&ssta=1&fo_m=MfohQo559jFvMWvkddHzV46uMT_RFPQ05bfKMQVr5-7IofUJMU_hT8vrWuwRMUv3d8yCO4PgMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&gei=tKsDZP2wFp-YptQPpKSUwAQ&ei=tKsDZP2wFp-YptQPpKSUwAQ&fo_s=OA,AH&orderType=2&sei=CZrmzxaPRYy7EQ7KrBCzMeDE&utm_campaign&utm_source=search', icon: <MdFastfood /> },
+  { href: 'https://food.google.com/chooseprovider?restaurantId=/g/11tg7z8kjh&g2lbs=ALIxsqomKHpLDzWTez9_uTLuIvfA-QnOwREm3Y-mbJEYtaklpyVziV7yYazP0RUB-UHWNBSZse1qqNDjOHMz8CIMkCGoHUVwRQ%3D%3D&hl=en-CA&gl=ca&cs=1&ssta=1&fo_m=MfohQo559jFvMWvkddHzV46uMT_RFPQ05bfKMQVr5-7IofUJMU_hT8vrWuwRMUv3d8yCO4PgMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&gei=tKsDZP2wFp-YptQPpKSUwAQ&ei=tKsDZP2wFp-YptQPpKSUwAQ&fo_s=OA', icon: <MdFastfood /> },
 ];
 
 export const aboutData = {
@@ -66,7 +72,7 @@ export const menuData = {
       image: MenuImg2,
       name: 'Chicken Gyros',
       price: 'CA$13.99',
-      description: 'A gyro is a sandwich that has lamb, beef, pork, or chicken, in pita bread, topped with lettuce, tomato, onion, and tzatziki sauce.',
+      description: 'Pita filled with various meats, topped with veggies and tzatziki.',
     },
     {
       image: MenuImg3,
@@ -78,7 +84,7 @@ export const menuData = {
       image: MenuImg4,
       name: 'Curry Roti',
       price: 'CA$17.99',
-      description: 'Roti is a wrap style sandwich filled with either curried or stewed meats along with chickpeas and potatoes.',
+      description: 'wrap filled with stewed meats along with chickpeas and potatoes.',
     },
   ],
 };
@@ -116,8 +122,11 @@ export const footerData = {
   social: {
     title: 'social network',
     icons: [
-      { href: '/', icon: <FaInstagram /> },
       { href: '/', icon: <FaFacebookF /> },
+      { href: 'https://instagram.com/caribbeancornernl', icon: <FaInstagram /> },
+      { href: 'https://www.doordash.com/en-CA/store/caribbean-corner-st.-johns-24615035/', icon: <SiDoordash /> },
+      { href: 'https://www.skipthedishes.com/caribbean-corner-302-water-street?utm_source=google&utm_medium=organic&utm_campaign=gpa', icon: <MdFoodBank /> },
+      { href: 'https://food.google.com/chooseprovider?restaurantId=/g/11tg7z8kjh&g2lbs=ALIxsqomKHpLDzWTez9_uTLuIvfA-QnOwREm3Y-mbJEYtaklpyVziV7yYazP0RUB-UHWNBSZse1qqNDjOHMz8CIMkCGoHUVwRQ%3D%3D&hl=en-CA&gl=ca&cs=1&ssta=1&fo_m=MfohQo559jFvMWvkddHzV46uMT_RFPQ05bfKMQVr5-7IofUJMU_hT8vrWuwRMUv3d8yCO4PgMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&gei=tKsDZP2wFp-YptQPpKSUwAQ&ei=tKsDZP2wFp-YptQPpKSUwAQ&fo_s=OA', icon: <MdFastfood /> },
     ],
   },
 };

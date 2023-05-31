@@ -30,7 +30,7 @@ export const navVariants = {
     opacity: 0,
     transition: {
       type: 'spring',
-      delay: 0.2,
+      delay: 0.1,
       stiffness: 300,
       damping: 140,
     },

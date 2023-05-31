@@ -26,21 +26,21 @@ const Hero = () => {
         >
           {/* pretitle */}
           <motion.div
-            variants={fadeIn('down', 'tween', 0.2, 1.1)}
+            variants={fadeIn('down', 'tween', 0.1, 0.5)}
             className='text-white text-[24px] lg:text-[28px] font-primary italic lg:font-medium mb-1'
           >
             {pretitle}
           </motion.div>
           {/* title */}
           <motion.h1
-            variants={fadeIn('down', 'tween', 0.3, 1.1)}
+            variants={fadeIn('down', 'tween', 0.2, 0.5)}
             className='h1 mb-5'
           >
             {title}
           </motion.h1>
           {/* subtitle */}
           <motion.p
-            variants={fadeIn('down', 'tween', 0.4, 1.1)}
+            variants={fadeIn('down', 'tween', 0.3, 0.5)}
             className='text-white max-w-[540px] mb-8'
           >
             {subtitle}
